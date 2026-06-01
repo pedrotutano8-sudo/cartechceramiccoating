@@ -114,11 +114,10 @@ export function EstimateForm() {
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Service Interest
                 </label>
-                <select name="service" className={inputClass} defaultValue="Not sure">
+                <select name="service" className={inputClass} defaultValue="Ceramic Coating">
                   <option>Ceramic Coating</option>
                   <option>Paint Correction</option>
                   <option>Both</option>
-                  <option>Not sure</option>
                 </select>
               </div>
               <div>
