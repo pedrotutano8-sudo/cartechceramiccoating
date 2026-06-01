@@ -26,7 +26,7 @@ export function Benefits() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
             Why Ceramic Coating
           </p>
-          <h2 className="text-3xl font-bold text-navy sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Engineered to outlast wax, sealants, and weekend detailing.
           </h2>
         </div>
@@ -39,7 +39,7 @@ export function Benefits() {
               <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-navy text-gold">
                 <Icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-navy">{title}</h3>
+              <h3 className="mb-2 text-xl font-semibold text-foreground">{title}</h3>
               <p className="text-muted-foreground">{body}</p>
             </div>
           ))}

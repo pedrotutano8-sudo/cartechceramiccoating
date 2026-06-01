@@ -14,7 +14,7 @@ export function Reviews() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
             Social Proof
           </p>
-          <h2 className="text-3xl font-bold text-navy sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             What Sarasota Drivers Are Saying
           </h2>
         </div>
@@ -28,7 +28,7 @@ export function Reviews() {
               </div>
               <p className="mb-6 flex-1 text-foreground">"{r.quote}"</p>
               <div>
-                <div className="font-semibold text-navy">{r.name}</div>
+                <div className="font-semibold text-foreground">{r.name}</div>
                 <div className="text-sm text-muted-foreground">{r.area}</div>
                 <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
                   <BadgeCheck className="h-4 w-4 text-gold" />

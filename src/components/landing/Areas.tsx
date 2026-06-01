@@ -14,7 +14,7 @@ export function Areas() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
             Coverage
           </p>
-          <h2 className="text-3xl font-bold text-navy sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Mobile Service Across the Gulf Coast
           </h2>
         </div>
@@ -22,7 +22,7 @@ export function Areas() {
           {areas.map((a) => (
             <li key={a} className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
               <MapPin className="h-4 w-4 text-gold" />
-              <span className="font-medium text-navy">{a}</span>
+              <span className="font-medium text-foreground">{a}</span>
             </li>
           ))}
         </ul>

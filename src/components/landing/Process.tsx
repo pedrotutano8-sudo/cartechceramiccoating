@@ -13,17 +13,17 @@ export function Process() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
             Our Process
           </p>
-          <h2 className="text-3xl font-bold text-navy sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl md:text-5xl">
             Methodical. Mobile. Meticulous.
           </h2>
         </div>
         <ol className="grid gap-8 md:grid-cols-4 md:gap-6">
           {steps.map((s) => (
             <li key={s.n} className="relative">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-card font-bold text-navy">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-card font-bold text-foreground">
                 {s.n}
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-navy">{s.title}</h3>
+              <h3 className="mb-2 text-lg font-semibold text-foreground">{s.title}</h3>
               <p className="text-sm text-muted-foreground">{s.body}</p>
             </li>
           ))}

@@ -65,13 +65,13 @@ export function EstimateForm() {
         {status === "success" ? (
           <div className="rounded-xl bg-card p-8 text-center text-foreground shadow-xl">
             <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-gold" />
-            <h3 className="mb-2 text-2xl font-bold text-navy">Request received.</h3>
+            <h3 className="mb-2 text-2xl font-bold text-foreground">Request received.</h3>
             <p className="mb-6 text-muted-foreground">
               We'll be in touch shortly. For urgent requests, call us directly.
             </p>
             <a
               href="tel:+19412780127"
-              className="inline-flex items-center justify-center rounded-md bg-gold px-6 py-3 font-semibold text-navy-deep hover:bg-gold-soft"
+              className="inline-flex items-center justify-center rounded-md bg-gold px-6 py-3 font-semibold text-foreground-deep hover:bg-gold-soft"
             >
               Call (941) 278-0127
             </a>
@@ -83,22 +83,22 @@ export function EstimateForm() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-navy">Name *</label>
+                <label className="mb-1.5 block text-sm font-medium text-foreground">Name *</label>
                 <input required name="name" className={inputClass} />
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-navy">Phone *</label>
+                <label className="mb-1.5 block text-sm font-medium text-foreground">Phone *</label>
                 <input required name="phone" type="tel" className={inputClass} />
               </div>
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-navy">Email</label>
+              <label className="mb-1.5 block text-sm font-medium text-foreground">Email</label>
               <input name="email" type="email" className={inputClass} />
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-navy">
+              <label className="mb-1.5 block text-sm font-medium text-foreground">
                 Vehicle (Year, Make, Model) *
               </label>
               <input
@@ -111,7 +111,7 @@ export function EstimateForm() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-navy">
+                <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Service Interest
                 </label>
                 <select name="service" className={inputClass} defaultValue="Not sure">
@@ -122,7 +122,7 @@ export function EstimateForm() {
                 </select>
               </div>
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-navy">
+                <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Address or ZIP *
                 </label>
                 <input required name="address" className={inputClass} />
@@ -130,14 +130,14 @@ export function EstimateForm() {
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-navy">Message</label>
+              <label className="mb-1.5 block text-sm font-medium text-foreground">Message</label>
               <textarea name="message" rows={3} className={inputClass} />
             </div>
 
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-4 text-base font-bold text-navy-deep transition-colors hover:bg-gold-soft disabled:opacity-60"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-4 text-base font-bold text-foreground-deep transition-colors hover:bg-gold-soft disabled:opacity-60"
             >
               {status === "submitting" ? (
                 <>
@@ -154,7 +154,7 @@ export function EstimateForm() {
 
             <p className="pt-2 text-center text-sm text-muted-foreground">
               Or call{" "}
-              <a href="tel:+19412780127" className="font-semibold text-navy underline">
+              <a href="tel:+19412780127" className="font-semibold text-foreground underline">
                 (941) 278-0127
               </a>{" "}
               — ask for Yan

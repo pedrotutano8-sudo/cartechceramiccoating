@@ -30,7 +30,7 @@ export function PaintCorrection() {
           <div className="absolute left-4 top-4 rounded-md bg-black/60 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-white/90 backdrop-blur">
             Before
           </div>
-          <div className="absolute bottom-4 right-4 rounded-md bg-gold px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-navy-deep">
+          <div className="absolute bottom-4 right-4 rounded-md bg-gold px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-foreground-deep">
             After
           </div>
         </div>

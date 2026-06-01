@@ -26,7 +26,7 @@ export function StickyHeader() {
           </div>
           <a
             href="tel:+19412780127"
-            className="inline-flex items-center gap-2 rounded-md bg-gold px-3 py-2 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold-soft sm:px-4 sm:text-base"
+            className="inline-flex items-center gap-2 rounded-md bg-gold px-3 py-2 text-sm font-semibold text-foreground-deep transition-colors hover:bg-gold-soft sm:px-4 sm:text-base"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden sm:inline">Call (941) 278-0127</span>
