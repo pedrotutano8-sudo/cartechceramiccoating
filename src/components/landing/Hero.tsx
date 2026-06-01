@@ -23,7 +23,7 @@ export function Hero() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a
             href="tel:+19412780127"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-4 text-base font-semibold text-navy-deep shadow-lg shadow-black/30 transition-transform hover:scale-[1.02] hover:bg-gold-soft sm:text-lg"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-4 text-base font-semibold text-foreground-deep shadow-lg shadow-black/30 transition-transform hover:scale-[1.02] hover:bg-gold-soft sm:text-lg"
           >
             <Phone className="h-5 w-5" />
             Call (941) 278-0127
