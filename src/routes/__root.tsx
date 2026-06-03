@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import favicon from "@/assets/cartech-favicon.png.asset.json";
 
 function NotFoundComponent() {
   return (
