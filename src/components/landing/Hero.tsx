@@ -1,8 +1,16 @@
 import { Phone, Star, MapPin, Award } from "lucide-react";
+import heroImg from "@/assets/IMG_1904.jpg.asset.json";
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-hero-gradient text-primary-foreground">
+      <img
+        src={heroImg.url}
+        alt="Yan performing paint correction on a black Corvette in Sarasota"
+        className="absolute inset-0 h-full w-full object-cover opacity-40"
+        loading="eager"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]" />
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pt-16 md:pb-24 md:pt-24">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-gold-soft backdrop-blur-sm">

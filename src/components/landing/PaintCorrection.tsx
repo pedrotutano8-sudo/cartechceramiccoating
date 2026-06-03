@@ -1,3 +1,5 @@
+import beforeAfterImg from "@/assets/IMG_8434.jpg.asset.json";
+
 export function PaintCorrection() {
   return (
     <section className="bg-navy py-20 text-primary-foreground md:py-28">
@@ -26,8 +28,13 @@ export function PaintCorrection() {
           </div>
         </div>
         <div className="relative">
-          <div className="bg-paint-gradient aspect-[4/3] w-full rounded-xl shadow-2xl shadow-black/40 ring-1 ring-white/10" />
-          <div className="absolute left-4 top-4 rounded-md bg-black/60 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-white/90 backdrop-blur">
+          <img
+            src={beforeAfterImg.url}
+            alt="Real paint correction result on a black vehicle — top half shows swirl marks and oxidation, bottom half shows a deep, mirror-like finish after correction"
+            className="aspect-[4/3] w-full rounded-xl object-cover shadow-2xl shadow-black/40 ring-1 ring-white/10"
+            loading="lazy"
+          />
+          <div className="absolute left-4 top-4 rounded-md bg-black/70 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-white/90 backdrop-blur">
             Before
           </div>
           <div className="absolute bottom-4 right-4 rounded-md bg-gold px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-foreground-deep">
