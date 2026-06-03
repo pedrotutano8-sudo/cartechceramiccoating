@@ -19,12 +19,9 @@ export function StickyHeader() {
     >
       <div className="bg-navy text-primary-foreground shadow-lg">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-bold sm:text-base">Car Tech</span>
-            <span className="text-[10px] uppercase tracking-wider text-gold-soft sm:text-xs">
-              Mobile Detailing
-            </span>
-          </div>
+          <a href="#" className="flex items-center gap-2">
+            <img src={logo.url} alt="Car Tech Mobile Detailing" className="h-9 w-auto sm:h-10" />
+          </a>
           <a
             href="tel:+19412780127"
             className="inline-flex items-center gap-2 rounded-md bg-gold px-3 py-2 text-sm font-semibold text-foreground-deep transition-colors hover:bg-gold-soft sm:px-4 sm:text-base"
