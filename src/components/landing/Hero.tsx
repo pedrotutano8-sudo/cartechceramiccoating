@@ -1,5 +1,6 @@
 import { Phone, Star, MapPin, Award } from "lucide-react";
 import heroImg from "@/assets/IMG_1904.jpg.asset.json";
+import logo from "@/assets/cartech-logo.png.asset.json";
 
 export function Hero() {
   return (
