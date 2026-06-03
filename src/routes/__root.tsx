@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import favicon from "@/assets/cartech-favicon.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -76,11 +75,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0F2A44" },
       { property: "og:site_name", content: "Car Tech Mobile Detailing" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Cartech" },
+      { property: "og:title", content: "Cartech" },
+      { name: "twitter:title", content: "Cartech" },
+      { name: "description", content: "Premium Ceramic & Paint Correction" },
+      { property: "og:description", content: "Premium Ceramic & Paint Correction" },
+      { name: "twitter:description", content: "Premium Ceramic & Paint Correction" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/zViBiIhmH7Ml7MPkCU4jIXfUcSZ2/social-images/social-1780492313966-2.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/zViBiIhmH7Ml7MPkCU4jIXfUcSZ2/social-images/social-1780492313966-2.webp" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: favicon.url },
-      { rel: "apple-touch-icon", href: favicon.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
