@@ -4,6 +4,7 @@ import { Hero } from "@/components/landing/Hero";
 import { Benefits } from "@/components/landing/Benefits";
 import { PaintCorrection } from "@/components/landing/PaintCorrection";
 import { Process } from "@/components/landing/Process";
+import { MeetYan } from "@/components/landing/MeetYan";
 import { Reviews } from "@/components/landing/Reviews";
 import { Areas } from "@/components/landing/Areas";
 import { FAQ } from "@/components/landing/FAQ";
