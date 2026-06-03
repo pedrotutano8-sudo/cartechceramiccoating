@@ -50,7 +50,9 @@ function Index() {
       <Benefits />
       <PaintCorrection />
       <Process />
+      <MeetYan />
       <Reviews />
+
       <Areas />
       <FAQ />
       <EstimateForm />
