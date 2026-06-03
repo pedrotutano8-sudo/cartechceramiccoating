@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
+import logo from "@/assets/cartech-logo.png.asset.json";
 
 export function StickyHeader() {
   const [show, setShow] = useState(false);
