@@ -14,6 +14,11 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]" />
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pt-16 md:pb-24 md:pt-24">
+        <img
+          src={logo.url}
+          alt="Car Tech Mobile Detailing logo"
+          className="mb-6 h-14 w-auto sm:h-16 md:h-20"
+        />
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-gold-soft backdrop-blur-sm">
           <MapPin className="h-3 w-3" />
           Sarasota, FL · Mobile Service
