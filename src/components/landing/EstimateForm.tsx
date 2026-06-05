@@ -1,8 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
-
-// TODO: Replace with your real webhook endpoint.
-const WEBHOOK_URL = "https://example.com/webhook/placeholder";
+import { useServerFn } from "@tanstack/react-start";
+import { sendEstimate } from "@/lib/estimate.functions";
 
 declare global {
   interface Window {
@@ -13,21 +12,28 @@ declare global {
 export function EstimateForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const send = useServerFn(sendEstimate);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     setErrorMsg("");
 
-    const formData = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
+    const payload = Object.fromEntries(formData.entries()) as Record<string, string>;
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, form_name: "ceramic_coating_lp" }),
-        mode: "no-cors",
+      await send({
+        data: {
+          name: payload.name ?? "",
+          phone: payload.phone ?? "",
+          email: payload.email ?? "",
+          vehicle: payload.vehicle ?? "",
+          service: payload.service ?? "",
+          address: payload.address ?? "",
+          message: payload.message ?? "",
+        },
       });
 
       window.dataLayer = window.dataLayer || [];
@@ -37,10 +43,11 @@ export function EstimateForm() {
       });
 
       setStatus("success");
-      (e.target as HTMLFormElement).reset();
+      formEl.reset();
     } catch (err) {
+      console.error(err);
       setStatus("error");
-      setErrorMsg("Something went wrong. Please call (941) 278-0127.");
+      setErrorMsg("Algo deu errado. Por favor, ligue para (941) 278-0127.");
     }
   }
 
