@@ -210,8 +210,3 @@ export function EstimateForm() {
     </section>
   );
 }
-          </form>
-        )}
-      </div>
-    </section>
-  );
