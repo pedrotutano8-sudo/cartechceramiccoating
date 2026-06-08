@@ -3,7 +3,9 @@ import { StickyHeader } from "@/components/landing/StickyHeader";
 import { Hero } from "@/components/landing/Hero";
 import { Benefits } from "@/components/landing/Benefits";
 import { PaintCorrection } from "@/components/landing/PaintCorrection";
+import { Packages } from "@/components/landing/Packages";
 import { Process } from "@/components/landing/Process";
+import { ProperPrep } from "@/components/landing/ProperPrep";
 import { MeetYan } from "@/components/landing/MeetYan";
 import { Reviews } from "@/components/landing/Reviews";
 import { Areas } from "@/components/landing/Areas";
@@ -49,6 +51,8 @@ function Index() {
       <Hero />
       <Benefits />
       <PaintCorrection />
+      <Packages />
+      <ProperPrep />
       <Process />
       <MeetYan />
       <Reviews />
