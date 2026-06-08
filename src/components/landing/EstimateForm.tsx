@@ -31,6 +31,8 @@ export function EstimateForm() {
           email: payload.email ?? "",
           vehicle: payload.vehicle ?? "",
           service: payload.service ?? "",
+          goal: payload.goal ?? "",
+          timeline: payload.timeline ?? "",
           address: payload.address ?? "",
           message: payload.message ?? "",
         },
@@ -59,13 +61,14 @@ export function EstimateForm() {
       <div className="mx-auto max-w-3xl px-4">
         <div className="mb-10 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
-            Free Estimate
+            Free Paint Inspection
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-            Ready to Protect Your Investment?
+            Schedule a Free Paint Inspection
           </h2>
           <p className="mt-4 text-white/80">
-            Get a free, no-obligation on-site inspection and quote.
+            We come on-site, inspect your paint under proper lighting, and give you a
+            transparent quote — no obligation. Packages typically start at $900+.
           </p>
         </div>
 
