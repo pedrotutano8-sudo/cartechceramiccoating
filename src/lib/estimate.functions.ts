@@ -7,6 +7,8 @@ const EstimateSchema = z.object({
   email: z.string().email().max(200).optional().or(z.literal("")),
   vehicle: z.string().min(1).max(300),
   service: z.string().max(100).optional().or(z.literal("")),
+  goal: z.string().max(200).optional().or(z.literal("")),
+  timeline: z.string().max(100).optional().or(z.literal("")),
   address: z.string().min(1).max(500),
   message: z.string().max(2000).optional().or(z.literal("")),
 });
@@ -33,6 +35,8 @@ export const sendEstimate = createServerFn({ method: "POST" })
         <tr><td><b>E-mail:</b></td><td>${esc(data.email || "-")}</td></tr>
         <tr><td><b>Ve&iacute;culo:</b></td><td>${esc(data.vehicle)}</td></tr>
         <tr><td><b>Servi&ccedil;o:</b></td><td>${esc(data.service || "-")}</td></tr>
+        <tr><td><b>Objetivo:</b></td><td>${esc(data.goal || "-")}</td></tr>
+        <tr><td><b>Prazo:</b></td><td>${esc(data.timeline || "-")}</td></tr>
         <tr><td><b>Endere&ccedil;o/CEP:</b></td><td>${esc(data.address)}</td></tr>
         <tr><td valign="top"><b>Mensagem:</b></td><td>${esc(data.message || "-")}</td></tr>
       </table>

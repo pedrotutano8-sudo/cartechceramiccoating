@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What's the price for ceramic coating?",
-    a: "Pricing depends on vehicle size, current paint condition, and the coating package you select. We provide a free on-site inspection and transparent quote — no obligation. Call us at (941) 278-0127 or request a free estimate below.",
+    a: "Ceramic coating packages typically start at $900+ depending on vehicle size, paint condition, and the level of correction needed. We provide a free on-site paint inspection and transparent quote — no obligation. Call or text us at (941) 278-0127.",
   },
   {
     q: "Do you really come to my location?",

@@ -46,7 +46,7 @@ export function Hero() {
             href="#estimate"
             className="inline-flex items-center justify-center rounded-md border border-white/25 bg-white/5 px-6 py-4 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 sm:text-lg"
           >
-            Get Free Estimate
+            Schedule a Free Paint Inspection
           </a>
         </div>
 
