@@ -138,6 +138,32 @@ export function EstimateForm() {
               </div>
             </div>
 
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  Main goal
+                </label>
+                <select name="goal" className={inputClass} defaultValue="Long-term paint protection">
+                  <option>Long-term paint protection</option>
+                  <option>Restore shine & remove swirl marks</option>
+                  <option>Protect a new vehicle</option>
+                  <option>Make maintenance easier</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  Timeline
+                </label>
+                <select name="timeline" className={inputClass} defaultValue="This week">
+                  <option>As soon as possible</option>
+                  <option>This week</option>
+                  <option>This month</option>
+                  <option>Just researching</option>
+                </select>
+              </div>
+            </div>
+
             <div>
               <label className="mb-1.5 block text-sm font-medium text-foreground">Message</label>
               <textarea name="message" rows={3} className={inputClass} />
@@ -153,7 +179,7 @@ export function EstimateForm() {
                   <Loader2 className="h-5 w-5 animate-spin" /> Sending…
                 </>
               ) : (
-                "Request Free Estimate"
+                "Schedule My Free Paint Inspection"
               )}
             </button>
 
@@ -161,12 +187,22 @@ export function EstimateForm() {
               <p className="text-center text-sm text-destructive">{errorMsg}</p>
             )}
 
-            <p className="pt-2 text-center text-sm text-muted-foreground">
-              Or call{" "}
-              <a href="tel:+19412780127" className="font-semibold text-foreground underline">
-                (941) 278-0127
-              </a>{" "}
-              — ask for Yan
+            <div className="grid gap-2 pt-2 sm:grid-cols-2">
+              <a
+                href="tel:+19412780127"
+                className="inline-flex items-center justify-center rounded-md border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-gold"
+              >
+                Call (941) 278-0127
+              </a>
+              <a
+                href="sms:+19412780127?&body=Hi%20Yan%2C%20I%27d%20like%20a%20ceramic%20coating%20quote."
+                className="inline-flex items-center justify-center rounded-md border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-gold"
+              >
+                Text Yan for a Quote
+              </a>
+            </div>
+            <p className="text-center text-xs text-muted-foreground">
+              Prefer messaging? Text us — most replies within the hour.
             </p>
           </form>
         )}
@@ -174,3 +210,8 @@ export function EstimateForm() {
     </section>
   );
 }
+          </form>
+        )}
+      </div>
+    </section>
+  );
