@@ -49,7 +49,7 @@ export function MeetYan() {
               </li>
               <li className="flex items-center gap-3">
                 <Wrench className="h-4 w-4 text-gold" />
-                Pro-grade products: Rupes, Menzerna, ceramic systems
+                Pro-grade products: Rupes, Koch Chemie, ceramic systems
               </li>
               <li className="flex items-center gap-3">
                 <ShieldCheck className="h-4 w-4 text-gold" />

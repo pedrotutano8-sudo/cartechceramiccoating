@@ -6,7 +6,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useRouter, isRedirect } from "@tanstack/react-router";
-import { T as TSS_SERVER_FUNCTION, g as getServerFnById, a as createServerFn } from "./server-xxoLUNSF.js";
+import { T as TSS_SERVER_FUNCTION, g as getServerFnById, a as createServerFn } from "./server-UXsNc_XW.js";
 import { z } from "zod";
 import "node:async_hooks";
 import "h3-v2";
@@ -393,7 +393,7 @@ function MeetYan() {
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-center gap-3", children: [
             /* @__PURE__ */ jsx(Wrench, { className: "h-4 w-4 text-gold" }),
-            "Pro-grade products: Rupes, Menzerna, ceramic systems"
+            "Pro-grade products: Rupes, Koch Chemie, ceramic systems"
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-center gap-3", children: [
             /* @__PURE__ */ jsx(ShieldCheck, { className: "h-4 w-4 text-gold" }),
