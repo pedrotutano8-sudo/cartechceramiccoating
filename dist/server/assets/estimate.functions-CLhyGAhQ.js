@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-DqStiR7Y.js";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-6hdNdPm7.js";
 import { z } from "zod";
 import "node:async_hooks";
 import "h3-v2";
@@ -65,7 +65,11 @@ async function getAccessToken() {
 }
 async function appendLeadToSheet(lead) {
   try {
+    console.log("[Sheets] Iniciando append para lead:", lead.name);
+    console.log("[Sheets] GOOGLE_CLIENT_EMAIL:", process.env.GOOGLE_CLIENT_EMAIL ? "OK" : "MISSING");
+    console.log("[Sheets] GOOGLE_PRIVATE_KEY:", process.env.GOOGLE_PRIVATE_KEY ? "OK" : "MISSING");
     const token = await getAccessToken();
+    console.log("[Sheets] Token obtido com sucesso");
     const date = (/* @__PURE__ */ new Date()).toLocaleString("en-US", { timeZone: "America/New_York" });
     const values = [[
       date,
@@ -91,10 +95,12 @@ async function appendLeadToSheet(lead) {
     );
     if (!res.ok) {
       const err = await res.text();
-      console.error("Google Sheets error:", err);
+      console.error("[Sheets] Erro ao salvar:", res.status, err);
+    } else {
+      console.log("[Sheets] Lead salvo com sucesso!");
     }
   } catch (err) {
-    console.error("Sheets append failed:", err);
+    console.error("[Sheets] Exceção:", err);
   }
 }
 const EstimateSchema = z.object({

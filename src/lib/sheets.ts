@@ -68,7 +68,11 @@ export async function appendLeadToSheet(lead: {
   gclid: string;
 }) {
   try {
+    console.log("[Sheets] Iniciando append para lead:", lead.name);
+    console.log("[Sheets] GOOGLE_CLIENT_EMAIL:", process.env.GOOGLE_CLIENT_EMAIL ? "OK" : "MISSING");
+    console.log("[Sheets] GOOGLE_PRIVATE_KEY:", process.env.GOOGLE_PRIVATE_KEY ? "OK" : "MISSING");
     const token = await getAccessToken();
+    console.log("[Sheets] Token obtido com sucesso");
     const date = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
 
     const values = [[
@@ -97,10 +101,11 @@ export async function appendLeadToSheet(lead: {
 
     if (!res.ok) {
       const err = await res.text();
-      console.error("Google Sheets error:", err);
+      console.error("[Sheets] Erro ao salvar:", res.status, err);
+    } else {
+      console.log("[Sheets] Lead salvo com sucesso!");
     }
   } catch (err) {
-    // Não deixa falhar o formulário se o Sheets der erro
-    console.error("Sheets append failed:", err);
+    console.error("[Sheets] Exceção:", err);
   }
 }
