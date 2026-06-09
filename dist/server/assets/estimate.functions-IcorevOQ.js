@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-6hdNdPm7.js";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-9G2951Mr.js";
 import { z } from "zod";
 import "node:async_hooks";
 import "h3-v2";
@@ -22,9 +22,10 @@ var createServerRpc = (serverFnMeta, splitImportFn) => {
 const SPREADSHEET_ID = "1LbTWDEb32TOkNeS9Dsr8LKOahPuJV047R2uh8nj8Ems";
 const SHEET_NAME = "Página1";
 async function getAccessToken() {
+  const rawKey = process.env.GOOGLE_PRIVATE_KEY;
   const credentials = {
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n")
+    private_key: rawKey.replace(/\\n/g, "\n").replace(/^"|"$/g, "").trim()
   };
   const now = Math.floor(Date.now() / 1e3);
   const header = { alg: "RS256", typ: "JWT" };
@@ -68,6 +69,7 @@ async function appendLeadToSheet(lead) {
     console.log("[Sheets] Iniciando append para lead:", lead.name);
     console.log("[Sheets] GOOGLE_CLIENT_EMAIL:", process.env.GOOGLE_CLIENT_EMAIL ? "OK" : "MISSING");
     console.log("[Sheets] GOOGLE_PRIVATE_KEY:", process.env.GOOGLE_PRIVATE_KEY ? "OK" : "MISSING");
+    console.log("[Sheets] KEY starts with:", process.env.GOOGLE_PRIVATE_KEY?.substring(0, 40));
     const token = await getAccessToken();
     console.log("[Sheets] Token obtido com sucesso");
     const date = (/* @__PURE__ */ new Date()).toLocaleString("en-US", { timeZone: "America/New_York" });

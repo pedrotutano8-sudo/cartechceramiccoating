@@ -95,7 +95,7 @@ async function getStartManifest(matchedRoutes) {
 const manifest = {
   "ed691c89cfa336051bf83f7d2c9e3ce37150b416e3cc7f6541014c5114529492": {
     functionName: "sendEstimate_createServerFn_handler",
-    importer: () => import("./estimate.functions-CLhyGAhQ.js")
+    importer: () => import("./estimate.functions-IcorevOQ.js")
   }
 };
 async function getServerFnById(id, access) {
@@ -1336,8 +1336,8 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
   const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-    import("./router-CXZbfzdA.js"),
-    import("./start-Cr6nUtl-.js"),
+    import("./router-B6xDuFM0.js"),
+    import("./start-KhKxgym9.js"),
     import("./empty-plugin-adapters-BFgPZ6_d.js")
   ]);
   return {
