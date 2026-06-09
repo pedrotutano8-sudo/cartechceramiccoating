@@ -1,12 +1,12 @@
 import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Phone, MapPin, Star, Award, ShieldCheck, Sparkles, Droplets, Shield, Crown, Search, Lightbulb, Ban, Wrench, BadgeCheck, ChevronDown, CheckCircle2, Loader2 } from "lucide-react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useRouter, isRedirect } from "@tanstack/react-router";
-import { T as TSS_SERVER_FUNCTION, g as getServerFnById, a as createServerFn } from "./server-UXsNc_XW.js";
+import { T as TSS_SERVER_FUNCTION, g as getServerFnById, a as createServerFn } from "./server-F3NI15oy.js";
 import { z } from "zod";
 import "node:async_hooks";
 import "h3-v2";
@@ -580,7 +580,8 @@ const EstimateSchema = z.object({
   goal: z.string().max(200).optional().or(z.literal("")),
   timeline: z.string().max(100).optional().or(z.literal("")),
   address: z.string().min(1).max(500),
-  message: z.string().max(2e3).optional().or(z.literal(""))
+  message: z.string().max(2e3).optional().or(z.literal("")),
+  gclid: z.string().max(200).optional().or(z.literal(""))
 });
 const sendEstimate = createServerFn({
   method: "POST"
@@ -588,7 +589,14 @@ const sendEstimate = createServerFn({
 function EstimateForm() {
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const gclidRef = useRef("");
   const send = useServerFn(sendEstimate);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const gclid = params.get("gclid") || sessionStorage.getItem("gclid") || "";
+    if (gclid) sessionStorage.setItem("gclid", gclid);
+    gclidRef.current = gclid;
+  }, []);
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");
@@ -607,7 +615,8 @@ function EstimateForm() {
           goal: payload.goal ?? "",
           timeline: payload.timeline ?? "",
           address: payload.address ?? "",
-          message: payload.message ?? ""
+          message: payload.message ?? "",
+          gclid: gclidRef.current
         }
       });
       window.dataLayer = window.dataLayer || [];

@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { appendLeadToSheet } from "./sheets";
 
 const EstimateSchema = z.object({
   name: z.string().min(1).max(200),
@@ -11,6 +12,7 @@ const EstimateSchema = z.object({
   timeline: z.string().max(100).optional().or(z.literal("")),
   address: z.string().min(1).max(500),
   message: z.string().max(2000).optional().or(z.literal("")),
+  gclid: z.string().max(200).optional().or(z.literal("")),
 });
 
 const TO_EMAIL = "detailingcartech@gmail.com";
@@ -63,6 +65,17 @@ export const sendEstimate = createServerFn({ method: "POST" })
       console.error("Resend error:", res.status, errBody);
       throw new Error(`Failed to send email (${res.status})`);
     }
+
+    // Salvar lead no Google Sheets (não bloqueia se falhar)
+    await appendLeadToSheet({
+      name: data.name,
+      phone: data.phone,
+      email: data.email || "",
+      vehicle: data.vehicle,
+      service: data.service || "",
+      address: data.address,
+      gclid: data.gclid || "",
+    });
 
     return { success: true };
   });

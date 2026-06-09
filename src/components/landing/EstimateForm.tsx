@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { sendEstimate } from "@/lib/estimate.functions";
@@ -12,7 +12,15 @@ declare global {
 export function EstimateForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const gclidRef = useRef("");
   const send = useServerFn(sendEstimate);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const gclid = params.get("gclid") || sessionStorage.getItem("gclid") || "";
+    if (gclid) sessionStorage.setItem("gclid", gclid);
+    gclidRef.current = gclid;
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,6 +43,7 @@ export function EstimateForm() {
           timeline: payload.timeline ?? "",
           address: payload.address ?? "",
           message: payload.message ?? "",
+          gclid: gclidRef.current,
         },
       });
 
