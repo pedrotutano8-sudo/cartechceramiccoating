@@ -1,5 +1,5 @@
 const SPREADSHEET_ID = "1LbTWDEb32TOkNeS9Dsr8LKOahPuJV047R2uh8nj8Ems";
-const SHEET_NAME = "Sheet1";
+const SHEET_NAME = "Página1";
 
 async function getAccessToken(): Promise<string> {
   const credentials = {

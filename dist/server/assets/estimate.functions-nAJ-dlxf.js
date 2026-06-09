@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-F3NI15oy.js";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-DqStiR7Y.js";
 import { z } from "zod";
 import "node:async_hooks";
 import "h3-v2";
@@ -20,7 +20,7 @@ var createServerRpc = (serverFnMeta, splitImportFn) => {
   });
 };
 const SPREADSHEET_ID = "1LbTWDEb32TOkNeS9Dsr8LKOahPuJV047R2uh8nj8Ems";
-const SHEET_NAME = "Sheet1";
+const SHEET_NAME = "Página1";
 async function getAccessToken() {
   const credentials = {
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
